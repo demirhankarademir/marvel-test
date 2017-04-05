@@ -3,6 +3,8 @@ package com.theappbusiness.marvel;
 
 import android.app.Application;
 
+import com.theappbusiness.marvel.network.NetworkManager;
+
 /**
  * Created by demir on 29.08.2016.
  */
