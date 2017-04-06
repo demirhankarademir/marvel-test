@@ -19,6 +19,11 @@
             </intent-filter>
         </activity>
 
+
+        <meta-data android:name="DATABASE" android:value="marve_test.db" />
+        <meta-data android:name="VERSION" android:value="1" />
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.theappbusiness.marvel" />
+
     </application>
 
 </manifest>

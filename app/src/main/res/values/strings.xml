@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Marvel</string>
+
+    <!--Mainpage Fragment Tabs-->
+    <string name="comics">Comics</string>
+    <string name="calculator">Calculator</string>
 </resources>

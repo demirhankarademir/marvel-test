@@ -7,10 +7,22 @@
     android:orientation="vertical"
     tools:context="com.theappbusiness.marvel.MainActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvComic"
+    <com.theappbusiness.marvel.ui.SlidingTabLayout
+        android:id="@+id/pager_title_strip"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        android:layout_height="46dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        ></com.theappbusiness.marvel.ui.SlidingTabLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></android.support.v4.view.ViewPager>
 
 
 </LinearLayout>
