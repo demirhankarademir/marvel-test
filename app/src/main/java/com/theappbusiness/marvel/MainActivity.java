@@ -1,11 +1,12 @@
 package com.theappbusiness.marvel;
 
+import android.app.ProgressDialog;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
+import android.widget.Toast;
 
+import com.theappbusiness.marvel.database.DatabaseManager;
 import com.theappbusiness.marvel.network.NetworkManager;
 import com.theappbusiness.marvel.network.NetworkModels;
 import com.theappbusiness.marvel.ui.SlidingTabLayout;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private MainPageFPA pagerAdapter;
     private ViewPager mViewPager;
     private SlidingTabLayout mSlidingTabLayout;
+    private ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void getComics()
     {
+        pDialog = ProgressDialog.show(this, getText(R.string.app_name), getText(R.string.please_wait), true);
+
         //TODO we can add pagination here
         NetworkManager.GetComics(NUMBER_OF_COMICS, offset, new Callback<NetworkModels.GetComicsResponse>() {
             @Override
@@ -63,12 +67,17 @@ public class MainActivity extends AppCompatActivity {
                 if (response.code() == 200)
                 {
                     NetworkModels.GetComicsResponse mResponse = response.body();
+                    DatabaseManager.updateComics(mResponse.data.results);
+                    pagerAdapter.showComics();
                 }
+                pDialog.dismiss();
             }
 
             @Override
             public void onFailure(Call<NetworkModels.GetComicsResponse> call, Throwable t) {
-
+                Toast.makeText(MainActivity.this, getText(R.string.connection_problem), Toast.LENGTH_SHORT).show();
+                pDialog.dismiss();
+                pagerAdapter.showComics();
             }
         });
     }

@@ -4,4 +4,7 @@
     <!--Mainpage Fragment Tabs-->
     <string name="comics">Comics</string>
     <string name="calculator">Calculator</string>
+
+    <string name="please_wait">Please wait..</string>
+    <string name="connection_problem">Connection Problem</string>
 </resources>

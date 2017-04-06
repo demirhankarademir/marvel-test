@@ -3,6 +3,7 @@ package com.theappbusiness.marvel;
 
 import android.app.Application;
 
+import com.orm.SugarContext;
 import com.theappbusiness.marvel.network.NetworkManager;
 
 /**
@@ -17,6 +18,7 @@ public class ApplicationController extends Application {
         mInstance = this;
 
         NetworkManager.initialize(getApplicationContext());
+        SugarContext.init(getApplicationContext());
     }
 
     public static ApplicationController getInstance()

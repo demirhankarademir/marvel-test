@@ -21,6 +21,8 @@ public class NetworkModels {
 
         public class Comic
         {
+            @SerializedName("id")
+            public Integer id;
             @SerializedName("title")
             public String title;
             @SerializedName("thumbnail")

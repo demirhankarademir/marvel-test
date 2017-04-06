@@ -55,5 +55,11 @@ public class MainPageFPA extends FragmentStatePagerAdapter {
         }
     }
 
+    public void showComics()
+    {
+        commicsFragment.onComicsUpdated();
+        calculatorFragment.onComicsUpdated();
+    }
+
 
 }
