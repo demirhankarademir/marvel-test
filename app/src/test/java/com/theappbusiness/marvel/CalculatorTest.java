@@ -34,7 +34,7 @@ public class CalculatorTest {
         c.setPageCount(100);
 
         Comic c1 = new Comic();
-        c1.setPrice(23.99);
+        c1.setPrice(120.0);
         c1.setPageCount(120);
 
         comicList.add(c);
