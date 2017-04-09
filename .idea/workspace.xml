@@ -10,9 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da3ba503-a63e-4df1-84a9-2d8e99557c5c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/test/java/com/theappbusiness/marvel/ExampleUnitTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/theappbusiness/marvel/ExampleInstrumentedTest.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/test/java/com/theappbusiness/marvel/CalculatorTest.java" afterPath="$PROJECT_DIR$/app/src/test/java/com/theappbusiness/marvel/CalculatorTest.java" />
     </list>
     <ignored path="marvel-test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,8 +74,8 @@
       <file leaf-file-name="CalculatorTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/test/java/com/theappbusiness/marvel/CalculatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+            <state relative-caret-position="126">
+              <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -2017,6 +2016,10 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="marvel" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -2057,7 +2060,7 @@
       <recent name="C:\Users\demir\Desktop\marvel-test\app\src\main\java\com\theappbusiness\marvel" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CalculatorTest">
+  <component name="RunManager" selected="Android App.app">
     <configuration default="false" name="CalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -2464,12 +2467,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/test/java/com/theappbusiness/marvel/CalculatorTest.java</url>
-          <line>54</line>
-          <properties />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/theappbusiness/marvel/Calculator.java</url>
           <line>32</line>
           <properties />
@@ -2481,7 +2478,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theappbusiness/marvel/ui/MACircleImageView.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theappbusiness/marvel/ui/ImageViewRounded.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theappbusiness/marvel/ui/MAChatView.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/theappbusiness/marvel/ui/HeaderGridView.java" />
@@ -2853,10 +2849,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/theappbusiness/marvel/ExampleInstrumentedTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/com/theappbusiness/marvel/CalculatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+        <state relative-caret-position="126">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
           <folding />
         </state>
       </provider>
