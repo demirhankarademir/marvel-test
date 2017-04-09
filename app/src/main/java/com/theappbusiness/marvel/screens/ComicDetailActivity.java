@@ -1,7 +1,10 @@
 package com.theappbusiness.marvel.screens;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -9,6 +12,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.theappbusiness.marvel.R;
+import com.theappbusiness.marvel.Utils;
 import com.theappbusiness.marvel.database.Comic;
 import com.theappbusiness.marvel.database.Creator;
 import com.theappbusiness.marvel.database.DatabaseManager;
@@ -48,7 +52,22 @@ public class ComicDetailActivity extends AppCompatActivity
         comic = DatabaseManager.getComic(comicID);
 
         tvTitle.setText(comic.getTitle());
-        tvDescription.setText(comic.getDescription());
+
+        getSupportActionBar().setTitle(getText(R.string.comic_detail));
+
+        if (comic.getDescription() != null)
+        {
+            String description;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
+            {
+                description = Utils.convertHtmlTextNougat(comic.getDescription());
+            }
+            else
+            {
+                description = Utils.convertHtmlText(comic.getDescription());
+            }
+            tvDescription.setText(description);
+        }
         tvNumberOfPages.setText(comic.getPageCount()+"");
         tvPrice.setText(comic.getPrice()+"");
         if (comic.getImageBigLandscape() != null && !comic.getImageBigLandscape().isEmpty())
@@ -72,4 +91,6 @@ public class ComicDetailActivity extends AppCompatActivity
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }
