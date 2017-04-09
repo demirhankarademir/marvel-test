@@ -8,6 +8,7 @@
     <string name="connection_problem">Connection Problem</string>
 
     <!--Comic Detail Screen-->
+    <string name="comic_detail">Comic Detail</string>
     <string name="description">Description</string>
     <string name="number_of_pages">Number Of Pages</string>
     <string name="price">Price</string>
