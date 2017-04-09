@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.theappbusiness.marvel">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +11,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".ApplicationController">
-        <activity android:name=".MainActivity">
+
+        <meta-data android:name="DATABASE" android:value="marve_test.db" />
+        <meta-data android:name="VERSION" android:value="1" />
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.theappbusiness.marvel" />
+
+        <activity android:name=".screens.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".screens.ComicDetailActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".screens.MainActivity"/>
+
+
 
     </application>
 
