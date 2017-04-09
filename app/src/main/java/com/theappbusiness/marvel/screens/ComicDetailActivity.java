@@ -1,4 +1,4 @@
-package com.theappbusiness.marvel;
+package com.theappbusiness.marvel.screens;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.theappbusiness.marvel.R;
 import com.theappbusiness.marvel.database.Comic;
 import com.theappbusiness.marvel.database.Creator;
 import com.theappbusiness.marvel.database.DatabaseManager;

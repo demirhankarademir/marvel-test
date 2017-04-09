@@ -78,4 +78,12 @@ public class Comic extends SugarRecord {
     public Double getPrice() {
         return price;
     }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public void setPageCount(Integer pageCount) {
+        this.pageCount = pageCount;
+    }
 }

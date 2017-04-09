@@ -1,4 +1,4 @@
-package com.theappbusiness.marvel;
+package com.theappbusiness.marvel.screens;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.theappbusiness.marvel.R;
 import com.theappbusiness.marvel.database.Creator;
 
 import java.util.ArrayList;

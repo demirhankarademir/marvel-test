@@ -1,4 +1,4 @@
-package com.theappbusiness.marvel;
+package com.theappbusiness.marvel.screens;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.theappbusiness.marvel.R;
 import com.theappbusiness.marvel.database.Comic;
 import com.theappbusiness.marvel.database.DatabaseManager;
 

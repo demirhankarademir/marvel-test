@@ -1,9 +1,11 @@
-package com.theappbusiness.marvel;
+package com.theappbusiness.marvel.screens;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
+import com.theappbusiness.marvel.R;
 
 /**
  * Created by demir on 10.01.2017.

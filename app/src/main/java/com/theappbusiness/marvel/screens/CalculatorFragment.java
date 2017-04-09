@@ -1,4 +1,4 @@
-package com.theappbusiness.marvel;
+package com.theappbusiness.marvel.screens;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,17 +6,18 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.theappbusiness.marvel.BudgetManager;
+import com.theappbusiness.marvel.Calculator;
+import com.theappbusiness.marvel.R;
+import com.theappbusiness.marvel.Utils;
 import com.theappbusiness.marvel.database.Comic;
 import com.theappbusiness.marvel.database.DatabaseManager;
 
@@ -29,12 +30,14 @@ import java.util.List;
 
 public class CalculatorFragment extends Fragment implements CalculatorComicAdapter.OnItemClickListener
 {
-    List<Comic> comicList, affordableList;
+    List<Comic> comicList;
     RecyclerView lvComics;
     CalculatorComicAdapter comicAdapter;
     Button bSubmit;
     EditText etBudget;
     TextView tvNumberOfComics, tvMaxNumberOfPages, tvCurrentBudget;
+    BudgetManager budgetManager;
+    Calculator calculator;
 
     @Nullable
     @Override
@@ -47,6 +50,7 @@ public class CalculatorFragment extends Fragment implements CalculatorComicAdapt
         tvMaxNumberOfPages = (TextView) view.findViewById(R.id.tvMaxNumberOfPages);
         tvNumberOfComics = (TextView) view.findViewById(R.id.tvNumberOfComics);
         tvCurrentBudget = (TextView) view.findViewById(R.id.tvCurrentBudget);
+        budgetManager = BudgetManager.getInstance();
 
         comicAdapter = new CalculatorComicAdapter(getActivity(), this);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 3);
@@ -54,7 +58,7 @@ public class CalculatorFragment extends Fragment implements CalculatorComicAdapt
         lvComics.setItemAnimator(new DefaultItemAnimator());
         lvComics.setAdapter(comicAdapter);
 
-        tvCurrentBudget.setText(Prefs.getBudget()+"");
+        tvCurrentBudget.setText(budgetManager.getBudget()+"");
 
 
         bSubmit.setOnClickListener(new View.OnClickListener()
@@ -67,7 +71,7 @@ public class CalculatorFragment extends Fragment implements CalculatorComicAdapt
                 if (!enteredString.equals(""))
                 {
                     float enteredBudget = Float.valueOf(etBudget.getText().toString());
-                    Prefs.setBudget(enteredBudget);
+                    budgetManager.setBudget(enteredBudget);
                     tvCurrentBudget.setText(enteredBudget+"");
                     showCommics();
                 }
@@ -83,27 +87,17 @@ public class CalculatorFragment extends Fragment implements CalculatorComicAdapt
 
     public void showCommics()
     {
+
         comicList = DatabaseManager.getComics();
-        affordableList = new ArrayList<>();
+        float budget = budgetManager.getBudget();
 
-        double totalPrice = 0;
-        double budget = Prefs.getBudget();
-        int totalPages = 0;
+        calculator = new Calculator();
+        calculator.calculate(comicList, budget);
 
-        for (Comic c : comicList)
-        {
-            if (budget >= totalPrice+c.getPrice())
-            {
-                totalPrice = totalPrice + c.getPrice();
-                affordableList.add(c);
-                totalPages = totalPages + c.getPageCount();
-            }
-        }
+        tvNumberOfComics.setText(calculator.getNumberOfComics()+"");
+        tvMaxNumberOfPages.setText(calculator.getTotalPages()+"");
 
-        tvNumberOfComics.setText(affordableList.size()+"");
-        tvMaxNumberOfPages.setText(totalPages+"");
-
-        comicAdapter.updateList(affordableList);
+        comicAdapter.updateList(calculator.getAffordableList());
     }
 
     @Override

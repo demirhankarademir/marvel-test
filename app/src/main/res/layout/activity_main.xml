@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@android:color/transparent"
-    tools:context="com.theappbusiness.marvel.MainActivity">
+    tools:context="com.theappbusiness.marvel.screens.MainActivity">
 
     <com.theappbusiness.marvel.ui.SlidingTabLayout
         android:id="@+id/pager_title_strip"

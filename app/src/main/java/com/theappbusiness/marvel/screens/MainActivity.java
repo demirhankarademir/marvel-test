@@ -1,4 +1,4 @@
-package com.theappbusiness.marvel;
+package com.theappbusiness.marvel.screens;
 
 import android.app.ProgressDialog;
 import android.support.v4.view.ViewPager;
@@ -6,14 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.theappbusiness.marvel.database.Comic;
-import com.theappbusiness.marvel.database.Creator;
+import com.theappbusiness.marvel.R;
 import com.theappbusiness.marvel.database.DatabaseManager;
 import com.theappbusiness.marvel.network.NetworkManager;
 import com.theappbusiness.marvel.network.NetworkModels;
 import com.theappbusiness.marvel.ui.SlidingTabLayout;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

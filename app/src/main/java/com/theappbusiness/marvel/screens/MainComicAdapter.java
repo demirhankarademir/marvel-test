@@ -1,4 +1,4 @@
-package com.theappbusiness.marvel;
+package com.theappbusiness.marvel.screens;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 
 import com.squareup.picasso.Picasso;
+import com.theappbusiness.marvel.R;
 import com.theappbusiness.marvel.database.Comic;
 
 import java.util.ArrayList;
