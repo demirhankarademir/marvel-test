@@ -4,7 +4,21 @@
     <!--Mainpage Fragment Tabs-->
     <string name="comics">Comics</string>
     <string name="calculator">Calculator</string>
-
     <string name="please_wait">Please wait..</string>
     <string name="connection_problem">Connection Problem</string>
+
+    <!--Comic Detail Screen-->
+    <string name="description">Description</string>
+    <string name="number_of_pages">Number Of Pages</string>
+    <string name="price">Price</string>
+    <string name="creators">Creators</string>
+
+    <!--Calculator Screen-->
+    <string name="please_enter_a_budget">Please enter a budget</string>
+    <string name="number_of_comics">Number of comics : </string>
+    <string name="max_number_of_pages_can_be_read">Max number of pages can be read : </string>
+    <string name="submit">Submit</string>
+    <string name="price_calculator">Price : </string>
+    <string name="pages">Pages : </string>
+    <string name="current_budget">Current Budget</string>
 </resources>

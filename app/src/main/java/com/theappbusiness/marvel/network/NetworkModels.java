@@ -27,7 +27,38 @@ public class NetworkModels {
             public String title;
             @SerializedName("thumbnail")
             public Image thumbnail;
+            @SerializedName("description")
+            public String description;
+            @SerializedName("pageCount")
+            public Integer pageCount;
+            @SerializedName("prices")
+            public Price[] prices;
+            @SerializedName("creators")
+            public Creator creators;
+
         }
+        public class Price
+        {
+            @SerializedName("type")
+            public String type;
+            @SerializedName("price")
+            public Double price;
+        }
+
+        public class Creator
+        {
+            @SerializedName("items")
+            public Item[] items;
+
+            public class Item
+            {
+                @SerializedName("name")
+                public String name;
+                @SerializedName("role")
+                public String role;
+            }
+        }
+
     }
 
     public static class Image

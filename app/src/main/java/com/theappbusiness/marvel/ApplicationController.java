@@ -19,6 +19,7 @@ public class ApplicationController extends Application {
 
         NetworkManager.initialize(getApplicationContext());
         SugarContext.init(getApplicationContext());
+        Prefs.initialize(getApplicationContext());
     }
 
     public static ApplicationController getInstance()

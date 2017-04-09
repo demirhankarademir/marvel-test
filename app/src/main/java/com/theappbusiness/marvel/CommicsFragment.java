@@ -1,11 +1,11 @@
 package com.theappbusiness.marvel;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +20,7 @@ import java.util.List;
  * Created by demir on 6.04.2017.
  */
 
-public class CommicsFragment extends Fragment
+public class CommicsFragment extends Fragment implements MainComicAdapter.OnItemClickListener
 {
     MainComicAdapter comicAdapter;
     List<Comic> comicList;
@@ -33,13 +33,22 @@ public class CommicsFragment extends Fragment
 
         rvComics = (RecyclerView) view.findViewById(R.id.rvComics);
 
-        comicAdapter = new MainComicAdapter(getActivity());
+        comicAdapter = new MainComicAdapter(getActivity(), this);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 3);
         rvComics.setLayoutManager(mLayoutManager);
         rvComics.setItemAnimator(new DefaultItemAnimator());
         rvComics.setAdapter(comicAdapter);
 
+
         return view;
+    }
+
+    @Override
+    public void onItemClick(Comic comic)
+    {
+        Intent i = new Intent(getActivity(), ComicDetailActivity.class);
+        i.putExtra(ComicDetailActivity.INTENT_COMIC_ID, comic.getmId());
+        startActivity(i);
     }
 
     public void onComicsUpdated()
@@ -47,5 +56,4 @@ public class CommicsFragment extends Fragment
         comicList = DatabaseManager.getComics();
         comicAdapter.updateList(comicList);
     }
-
 }

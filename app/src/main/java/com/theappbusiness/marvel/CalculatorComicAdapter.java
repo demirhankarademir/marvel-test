@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
 import com.squareup.picasso.Picasso;
 import com.theappbusiness.marvel.database.Comic;
 
@@ -20,7 +19,7 @@ import java.util.List;
  * Created by demir on 30.11.2016.
  */
 
-public class MainComicAdapter extends RecyclerView.Adapter<MainComicAdapter.ViewHolder> {
+public class CalculatorComicAdapter extends RecyclerView.Adapter<CalculatorComicAdapter.ViewHolder> {
     private List<Comic> mList = new ArrayList<>();
     private Activity activity;
     private OnItemClickListener onItemClickListener;
@@ -28,13 +27,16 @@ public class MainComicAdapter extends RecyclerView.Adapter<MainComicAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder  {
         ImageView ivImage;
-        TextView tvTitle;
+        TextView tvTitle, tvPrice, tvNumberOfPages;
         LinearLayout llContainer;
+
         public ViewHolder(View v) {
             super(v);
             ivImage = (ImageView) v.findViewById(R.id.ivImage);
             tvTitle = (TextView) v.findViewById(R.id.tvTitle);
             llContainer = (LinearLayout) v.findViewById(R.id.llContainer);
+            tvPrice = (TextView) v.findViewById(R.id.tvPrice);
+            tvNumberOfPages = (TextView) v.findViewById(R.id.tvNumberOfPages);
         }
     }
 
@@ -45,7 +47,7 @@ public class MainComicAdapter extends RecyclerView.Adapter<MainComicAdapter.View
 
 
 
-    public MainComicAdapter(Activity activity, OnItemClickListener onItemClickListener)
+    public CalculatorComicAdapter(Activity activity, OnItemClickListener onItemClickListener)
     {
         this.activity = activity;
         this.onItemClickListener = onItemClickListener;
@@ -66,14 +68,15 @@ public class MainComicAdapter extends RecyclerView.Adapter<MainComicAdapter.View
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.row_main_comic, parent, false);
+                .inflate(R.layout.row_calculator_comic, parent, false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position)
+    {
         final Comic comic = mList.get(position);
 
         if (comic.getImageThumbnail() != null && !comic.getImageThumbnail().isEmpty())
@@ -87,6 +90,8 @@ public class MainComicAdapter extends RecyclerView.Adapter<MainComicAdapter.View
                 onItemClickListener.onItemClick(comic);
             }
         });
+        holder.tvPrice.setText(comic.getPrice()+"");
+        holder.tvNumberOfPages.setText(comic.getPageCount()+"");
     }
 
     // Return the size of your dataset (invoked by the layout manager)

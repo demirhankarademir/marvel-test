@@ -21,6 +21,9 @@
             android:layout_height="150dp"
             android:layout_marginTop="5dp"/>
 
+
+
+
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
@@ -32,7 +35,35 @@
             android:textColor="@android:color/black"
             android:lines="4"
             android:textStyle="bold"
-            android:text="asdasdasd"/>
-    </LinearLayout>
+            android:text="asdasdasdasdasdasdasd"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/price_calculator"/>
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pages"/>
+
+            <TextView
+                android:id="@+id/tvNumberOfPages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

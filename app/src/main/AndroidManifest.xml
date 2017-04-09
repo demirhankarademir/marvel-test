@@ -11,18 +11,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".ApplicationController">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
 
         <meta-data android:name="DATABASE" android:value="marve_test.db" />
         <meta-data android:name="VERSION" android:value="1" />
         <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.theappbusiness.marvel" />
+
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ComicDetailActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity"/>
+
+
 
     </application>
 
